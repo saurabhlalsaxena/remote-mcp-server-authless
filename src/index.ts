@@ -55,6 +55,15 @@ export class MyMCP extends McpAgent {
 				return { content: [{ type: "text", text: String(result) }] };
 			}
 		);
+
+		// Simple tool to get random number
+		this.server.tool(
+			"getRandomNumber",
+			{},
+			async () => ({
+				content: [{ type: "text", text: String(Math.random()) }],
+			})
+		);
 	}
 }
 

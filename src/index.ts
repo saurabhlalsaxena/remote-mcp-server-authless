@@ -56,12 +56,12 @@ export class MyMCP extends McpAgent {
 			}
 		);
 
-		// Simple tool to get random number
+		// Simple tool to get random number between 1 and 100
 		this.server.tool(
 			"getRandomNumber",
 			{},
 			async () => ({
-				content: [{ type: "text", text: String(Math.random()) }],
+				content: [{ type: "text", text: String(Math.floor(Math.random() * 100) + 1) }],
 			})
 		);
 	}
